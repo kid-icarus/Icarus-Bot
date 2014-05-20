@@ -1,0 +1,16 @@
+{
+  "server": {
+    "host": "irc.example.com",
+    "port": "6667"
+  },
+  "user": {
+    "pass": "a real password!",
+    "user": "exampleUser",
+    "nick": "exampleNick",
+    "name": "A Real Name"
+  },
+  "chans": [{
+    "chan": "#example",
+    "chanPass": "examplePass"
+  }]
+}
