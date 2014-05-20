@@ -1,10 +1,14 @@
 {
-  "name": "meatbot",
+  "name": "icarusbot",
   "version": "0.0.1",
-  "description": "",
+  "description": "An IRC bot.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kid-icarus/Icarus-Bot.git"
   },
   "author": "Ryan Kois",
   "license": "ISC",
