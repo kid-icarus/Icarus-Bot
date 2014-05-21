@@ -1,0 +1,130 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.4.6
+3 info using node@v0.10.24
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/ryan/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+12 verbose folder .
+13 info prepublish icarusbot@0.0.1
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /home/ryan/.npm/1f1177db-tar.lock
+16 silly lockFile 5e973f25-8587-0-32106070779263973-tmp-tgz tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+17 verbose lock tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz /home/ryan/.npm/5e973f25-8587-0-32106070779263973-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 5e973f25-8587-0-32106070779263973-tmp-tgz tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+21 silly lockFile 5e973f25-8587-0-32106070779263973-tmp-tgz tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+22 verbose tar unpack /home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+23 silly lockFile e84e3e4d-8587-0-32106070779263973-package tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+24 verbose lock tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package /home/ryan/.npm/e84e3e4d-8587-0-32106070779263973-package.lock
+25 silly lockFile 5e973f25-8587-0-32106070779263973-tmp-tgz tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+26 verbose lock tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz /home/ryan/.npm/5e973f25-8587-0-32106070779263973-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm extractEntry .npmignore
+30 silly gunzTarPerm extractEntry README.md
+31 silly gunzTarPerm extractEntry index.js
+32 silly gunzTarPerm extractEntry config.dist.json
+33 silly lockFile e84e3e4d-8587-0-32106070779263973-package tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+34 silly lockFile e84e3e4d-8587-0-32106070779263973-package tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+35 silly lockFile 5e973f25-8587-0-32106070779263973-tmp-tgz tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+36 silly lockFile 5e973f25-8587-0-32106070779263973-tmp-tgz tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/tmp.tgz
+37 verbose tar pack [ '/home/ryan/.npm/icarusbot/0.0.1/package.tgz',
+37 verbose tar pack   '/home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package' ]
+38 verbose tarball /home/ryan/.npm/icarusbot/0.0.1/package.tgz
+39 verbose folder /home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+40 silly lockFile e84e3e4d-8587-0-32106070779263973-package tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+41 verbose lock tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package /home/ryan/.npm/e84e3e4d-8587-0-32106070779263973-package.lock
+42 silly lockFile d4e4583b--npm-icarusbot-0-0-1-package-tgz tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz
+43 verbose lock tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz /home/ryan/.npm/d4e4583b--npm-icarusbot-0-0-1-package-tgz.lock
+44 silly lockFile e84e3e4d-8587-0-32106070779263973-package tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+45 silly lockFile e84e3e4d-8587-0-32106070779263973-package tar:///home/ryan/tmp/npm-19330-1ST8DnK6/1400630858587-0.32106070779263973/package
+46 silly lockFile d4e4583b--npm-icarusbot-0-0-1-package-tgz tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz
+47 silly lockFile d4e4583b--npm-icarusbot-0-0-1-package-tgz tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz
+48 silly lockFile 0d427fae-ryan-npm-icarusbot-0-0-1-package /home/ryan/.npm/icarusbot/0.0.1/package
+49 verbose lock /home/ryan/.npm/icarusbot/0.0.1/package /home/ryan/.npm/0d427fae-ryan-npm-icarusbot-0-0-1-package.lock
+50 silly lockFile 0d427fae-ryan-npm-icarusbot-0-0-1-package /home/ryan/.npm/icarusbot/0.0.1/package
+51 silly lockFile 0d427fae-ryan-npm-icarusbot-0-0-1-package /home/ryan/.npm/icarusbot/0.0.1/package
+52 verbose tar unpack /home/ryan/.npm/icarusbot/0.0.1/package.tgz
+53 silly lockFile 59df3947-ryan-npm-icarusbot-0-0-1-package tar:///home/ryan/.npm/icarusbot/0.0.1/package
+54 verbose lock tar:///home/ryan/.npm/icarusbot/0.0.1/package /home/ryan/.npm/59df3947-ryan-npm-icarusbot-0-0-1-package.lock
+55 silly lockFile d4e4583b--npm-icarusbot-0-0-1-package-tgz tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz
+56 verbose lock tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz /home/ryan/.npm/d4e4583b--npm-icarusbot-0-0-1-package-tgz.lock
+57 silly gunzTarPerm modes [ '755', '644' ]
+58 silly gunzTarPerm extractEntry package.json
+59 silly gunzTarPerm extractEntry .npmignore
+60 silly gunzTarPerm extractEntry README.md
+61 silly gunzTarPerm extractEntry index.js
+62 silly gunzTarPerm extractEntry config.dist.json
+63 silly lockFile 59df3947-ryan-npm-icarusbot-0-0-1-package tar:///home/ryan/.npm/icarusbot/0.0.1/package
+64 silly lockFile 59df3947-ryan-npm-icarusbot-0-0-1-package tar:///home/ryan/.npm/icarusbot/0.0.1/package
+65 silly lockFile d4e4583b--npm-icarusbot-0-0-1-package-tgz tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz
+66 silly lockFile d4e4583b--npm-icarusbot-0-0-1-package-tgz tar:///home/ryan/.npm/icarusbot/0.0.1/package.tgz
+67 verbose chmod /home/ryan/.npm/icarusbot/0.0.1/package.tgz 644
+68 verbose chown /home/ryan/.npm/icarusbot/0.0.1/package.tgz [ 1000, 1000 ]
+69 silly lockFile 3a52ce78- .
+70 silly lockFile 3a52ce78- .
+71 silly publish { name: 'icarusbot',
+71 silly publish   version: '0.0.1',
+71 silly publish   description: 'An IRC bot.',
+71 silly publish   main: 'index.js',
+71 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+71 silly publish   repository:
+71 silly publish    { type: 'git',
+71 silly publish      url: 'https://github.com/kid-icarus/Icarus-Bot.git' },
+71 silly publish   author: { name: 'Ryan Kois' },
+71 silly publish   license: 'ISC',
+71 silly publish   readme: '##ICARUS BOT\nThis is a very simple IRC bot that I built from scratch because I wanted to\nlearn about [RFC2812](http://tools.ietf.org/html/rfc2812).\n\nThis is a WIP and sux real bad, dealwithit.\n\n##Usage:\n - Copy config.dist.json to config.json\n - Fill out all the stuff in config.json\n - `node index.js`\n - Currently supports a !face command that fetches a random face [from my\n   smiley face api](https://www.npmjs.org/package/lysergix-api)\n',
+71 silly publish   readmeFilename: 'README.md',
+71 silly publish   bugs: { url: 'https://github.com/kid-icarus/Icarus-Bot/issues' },
+71 silly publish   homepage: 'https://github.com/kid-icarus/Icarus-Bot',
+71 silly publish   _id: 'icarusbot@0.0.1',
+71 silly publish   dist: { shasum: '3bfa6530c9e0c627057c5c74f085feff1204c288' },
+71 silly publish   _from: '.' }
+72 verbose url raw icarusbot
+73 verbose url resolving [ 'https://registry.npmjs.org/', './icarusbot' ]
+74 verbose url resolved https://registry.npmjs.org/icarusbot
+75 info trying registry request attempt 1 at 17:07:38
+76 http PUT https://registry.npmjs.org/icarusbot
+77 http 403 https://registry.npmjs.org/icarusbot
+78 error publish Failed PUT 403
+79 error Error: forbidden cannot modify pre-existing version: 0.0.1
+79 error old={"name":"icarusbot","version":"0.0.1","description":"An IRC bot.","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/kid-icarus/Icarus-Bot.git"},"author":{"name":"Ryan Kois"},"license":"ISC","bugs":{"url":"https://github.com/kid-icarus/Icarus-Bot/issues"},"homepage":"https://github.com/kid-icarus/Icarus-Bot","_id":"icarusbot@0.0.1","dist":{"shasum":"112a2000f84b044c74fc35c060eb9d06fc2c89d7","tarball":"http://registry.npmjs.org/icarusbot/-/icarusbot-0.0.1.tgz"},"_from":".","_npmVersion":"1.4.6","_npmUser":{"name":"kid-icarus","email":"ryan.kois@gmail.com"},"maintainers":[{"name":"kid-icarus","email":"ryan.kois@gmail.com"}]}
+79 error new={"name":"icarusbot","version":"0.0.1","description":"An IRC bot.","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/kid-icarus/Icarus-Bot.git"},"author":{"name":"Ryan Kois"},"license":"ISC","readme":"##ICARUS BOT\u000aThis is a very simple IRC bot that I built from scratch because I wanted to\u000alearn about [RFC2812](http://tools.ietf.org/html/rfc2812).\u000a\u000aThis is a WIP and sux real bad, dealwithit.\u000a\u000a##Usage:\u000a - Copy config.dist.json to config.json\u000a - Fill out all the stuff in config.json\u000a - `node index.js`\u000a - Currently supports a !face command that fetches a random face [from my\u000a   smiley face api](https://www.npmjs.org/package/lysergix-api)\u000a","readmeFilename":"README.md","bugs":{"url":"https://github.com/kid-icarus/Icarus-Bot/issues"},"homepage":"https://github.com/kid-icarus/Icarus-Bot","_id":"icarusbot@0.0.1","dist":{"shasum":"3bfa6530c9e0c627057c5c74f085feff1204c288","tarball":"http://registry.npmjs.org/icarusbot/-/icarusbot-0.0.1.tgz"},"_from":".","_npmVersion":"1.4.6","_npmUser":{"name":"kid-icarus","email":"ryan.kois@gmail.com"},"maintainers":[{"name":"kid-icarus","email":"ryan.kois@gmail.com"}]}: icarusbot
+79 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:254:14)
+79 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:192:65)
+79 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:123:22)
+79 error     at Request.EventEmitter.emit (events.js:98:17)
+79 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:893:14)
+79 error     at Request.EventEmitter.emit (events.js:117:20)
+79 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:844:12)
+79 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+79 error     at _stream_readable.js:920:16
+79 error     at process._tickCallback (node.js:415:13)
+80 error If you need help, you may report this *entire* log,
+80 error including the npm and node versions, at:
+80 error     <http://github.com/npm/npm/issues>
+81 error System Linux 3.11.0-20-generic
+82 error command "node" "/usr/local/bin/npm" "publish"
+83 error cwd /home/ryan/Project/icarusbot
+84 error node -v v0.10.24
+85 error npm -v 1.4.6
+86 verbose exit [ 1, true ]
