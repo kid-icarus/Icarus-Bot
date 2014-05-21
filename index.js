@@ -1,9 +1,9 @@
 var net = require('net')
 var fs = require('fs')
 var http = require('http')
+var config = require('./config.json')
 
 var irc = function() {
-  var config = JSON.parse(fs.readFileSync('config.json').toString())
   console.log(config)
 
   var client = net.connect(config.server, function() {
