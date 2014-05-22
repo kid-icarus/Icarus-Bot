@@ -11,6 +11,6 @@
   },
   "chans": [{
     "chan": "#example",
-    "chanPass": "examplePass"
+    "pass": "examplePass"
   }]
 }

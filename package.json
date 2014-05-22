@@ -11,5 +11,8 @@
     "url": "https://github.com/kid-icarus/Icarus-Bot.git"
   },
   "author": "Ryan Kois",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "through": "^2.3.4"
+  }
 }

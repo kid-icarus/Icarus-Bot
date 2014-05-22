@@ -1,116 +1,103 @@
+module.exports = icarusbot
+
 var net = require('net')
-var fs = require('fs')
-var http = require('http')
-var config = require('./config.json')
+var through = require('through')
 
-var irc = function() {
+function icarusbot(configPath) {
+  if (!configPath) {
+    // HOW DO I HANDLE THIS? I ALWAYS GET SHORT CIRCUITS WRONG!
+    return undefined
+  }
+
+  var config = require(configPath)
   console.log(config)
+  var bot = net.connect(config.server)
 
-  var client = net.connect(config.server, function() {
-    console.log('connected')
-  })
-
-  var join = function() {
-    config.chans.forEach(function(chan) {
-      var msg = 'JOIN ' + chan.chan
-      if (chan.chanPass) {
-        msg += ' ' + chan.chanPass
-      }
-      msg += '\r\n'
-      client.write(msg)
-    })
-  }
-
-  var connect = function() {
-    client.write('PASS ' + config.user.pass + '\r\n')
-    client.write('USER ' + config.user.user + ' 0 * :' + config.user.name + '\r\n')
-    client.write('NICK ' + config.user.nick + '\r\n')
-    join()
-  }
-
-  var privMsg = function(chan, msg) {
-    client.write('PRIVMSG ' + chan + ' :' + msg + '\r\n')
-  }
-
-  var pong = function(server) {
-    client.write('PONG ' + server + '\r\n')
-  }
-
-  var msgHandler = function(nick, msg) {
-    var msg = msg.trim().split(' ')
-    var chan = msg.shift()
-    msg = msg.join(' ')
-    if (msg.match(/^:!face/)) {
-      var smiley = ''
-      var req = http.get('http://smiley.meatcub.es:1337/api/v1/random', function(res) {
-        if (res.statusCode === 200) {
-          console.log('yay smiley')
-        }
-        res.on('data', function(data){
-          smiley += data.toString()
-        })
-        res.on('end', function(){
-          smileFace = JSON.parse(smiley)
-          privMsg(chan, smileFace.content)
-        })
-      })
-    }
-    console.log('NICK: ' + nick)
-    console.log('CHAN: ' + chan)
-    console.log('MESSAGE: ' + msg)
-  }
-
-  var commandHandler = function(prefix, cmd, params) {
-    if (!cmd) {
-      return
-    }
-    switch(cmd) {
-      case 'NOTICE':
-        if (params.trim().indexOf('*** No Ident response') !== -1) {
-          connect()
-        }
-        break;
-
-      case 'PRIVMSG':
-        var matches = prefix.trim().match(/:([^!]*)!.*/)
-        if (matches && matches.length > 0) {
-          msgHandler( matches[1], params)
-        }
-        console.log(matches)
-        break;
-
-      case 'PING':
-        pong(params);
-        break;
-    }
-  }
-
-  var parseMsg = function(msg) {
+  //convert rfc to object
+  // HOW DO I SHARE THIS WITH OTHER MODULES?
+  var parseMsg =  through(function(buf){
     // 3 parts, prefix (optional). command, params (up to 15)
+
+    var msg = buf.toString()
     if (!msg) {
       return
     }
+
+    // Todo: uh... the optional first capture needs to be dealt with?
     var matches = msg.match(/^(:[^ ]+)? ?(\w+)(.*)\r\n$/)
     if (!matches) {
       return
     }
-    if (matches.length > 3) {
-      var prefix = matches[1]
-      var command = matches[2]
-      var params = matches[3]
-      console.log('Prefix: ' + prefix)
-      console.log('Command: ' + command)
-      console.log('Params: ' + params)
-      commandHandler(prefix, command, params)
-    }
-  }
 
-
-  client.on('data', function(data) {
-    console.log(data.toString())
-    parseMsg(data.toString())
+    this.queue(JSON.stringify({
+      prefix: matches[1],
+      cmd: matches[2],
+      params: matches[3]
+    }))
   })
+
+  // Core commands that should be handled to intialize and keep the bot alive.
+  var initHandler = through(function(cmd) {
+    var self = this
+    cmdObj = JSON.parse(cmd)
+    if (!cmdObj.cmd) {
+      return
+    }
+    switch(cmdObj.cmd) {
+      case 'NOTICE':
+        // I don't even know is this is the right way to get started lel.
+        if (cmdObj.params.trim().indexOf('*** No Ident response') !== -1) {
+          this.queue('PASS ' + config.user.pass)
+          this.queue('USER ' + config.user.user + ' 0 * :' + config.user.name)
+          this.queue('NICK ' + config.user.nick)
+
+          config.chans.forEach(function(chan) {
+            self.queue('JOIN ' + chan.chan + ' ' + chan.pass)
+          })
+
+        }
+        break;
+
+      case '433':
+        // DRY AAAAAH
+        setTimeout(function() {
+          self.queue('PASS ' + config.user.pass)
+          self.queue('USER ' + config.user.user + ' 0 * :' + config.user.name)
+          self.queue('NICK ' + config.user.nick)
+        }, 15000)
+
+        break;
+
+      case 'PING':
+        this.queue('PONG ' + cmdObj.prefix)
+        break;
+    }
+  })
+
+  var br = through(function(buf) {
+    this.queue(buf + '\r\n')
+  })
+
+  // TODO: finish dis, use it in da pipe.
+  var generateCmd = through(function(cmd) {
+    cmdObj = JSON.parse(cmd)
+    this.queue()
+  })
+
+  //{} to rfc chats to send out.
+  var validate = through(function(cmd) {
+    if (cmd.length <= 512) {
+      this.queue(cmd)
+    }
+  })
+
+
+  bot.pipe(bot.prototype.parseMsg)
+    .pipe(initHandler)
+    .pipe(br)
+    .pipe(validate)
+    .pipe(bot)
+
+  return bot
 }
 
-
-irc()
