@@ -92,7 +92,7 @@ function icarusbot(configPath) {
   })
 
 
-  bot.pipe(bot.prototype.parseMsg)
+  bot.pipe(parseMsg)
     .pipe(initHandler)
     .pipe(br)
     .pipe(validate)
