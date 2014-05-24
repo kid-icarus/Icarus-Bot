@@ -12,7 +12,6 @@ module.exports =  map.ctor({wantStrings: true, objectMode: true}, function(msg){
   if (!matches) {
     return
   }
-
   return {
     prefix: matches[1],
     cmd: matches[2],
