@@ -1,6 +1,6 @@
 {
   "name": "icarusbot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An IRC bot.",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,9 @@
   "author": "Ryan Kois",
   "license": "ISC",
   "dependencies": {
+    "duplexer": "^0.1.1",
+    "split": "^0.3.0",
     "through2": "^0.4.2",
-    "through2-map": "^1.2.1",
-    "duplexer": "^0.1.1"
+    "through2-map": "^1.2.1"
   }
 }
