@@ -1,4 +1,4 @@
-var config = require('./config')
+var config = require('./config.json')
 var stream = require('./irc-stream')(config.server)
 var through = require('through2')
 var events = require('events')
