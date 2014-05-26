@@ -1,23 +1,27 @@
-module.exports = icarusBot
+var config = require('./config')
+var stream = require('./irc-stream')(config.server)
+var through = require('through2')
+var events = require('events')
+var bot = new events.EventEmitter()
+var coreHandlers = require('./coreHandlers')(bot)
 
-var net = require('net')
-var duplex = require('duplexer')
-
-var parseMsg = require('./createParser')
-var createMsg = require('./createMsg')
-
-function icarusBot(configPath) {
-  console.log('hi')
-  var config = require(configPath)
-  var initHandler = require('./initHandler')(config)
-
-  var conn = net.connect(config.server)
-  var input = parseMsg()
-  var output = createMsg()
-
-  conn.pipe(input)
-  output.pipe(conn)
-
-  var stream = duplex(input, output)
-  return stream
+var msg = function(targets, message) {
+  bot.emit('cmd', {
+    cmd: 'privmsg',
+    params: [targets.join(' '), ':' + message].join(' ')
+  })
 }
+
+bot.on('cmd', function(cmd){
+  stream.write(cmd)
+})
+
+var botEmitter = through.obj(function(cmdObj, enc, cb) {
+  bot.emit(cmdObj.cmd.toLowerCase(), cmdObj)
+  cb()
+})
+
+stream.pipe(botEmitter)
+
+module.exports = bot
+module.exports.msg = msg

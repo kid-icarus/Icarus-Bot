@@ -1,6 +1,6 @@
 {
   "name": "icarusbot",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "An IRC bot.",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,6 @@
   "dependencies": {
     "through2": "^0.4.2",
     "through2-map": "^1.2.1",
-    "through2-reduce": "^0.2.3"
     "duplexer": "^0.1.1"
-  },
+  }
 }

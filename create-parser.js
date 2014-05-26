@@ -2,15 +2,13 @@ var through = require('through2')
 var map = require('through2-map')
 
 module.exports =  map.ctor({wantStrings: true, objectMode: true}, function(msg){
-  // 3 parts, prefix (optional). command, params (up to 15)
-
   if (!msg) {
     return
   }
 
-  var matches = msg.match(/^(:[^ ]+)? ?(\w+)(.*)\r\n$/)
+  var matches = msg.match(/^(:[^ ]+)? ?(\w+)(.*)$/)
   if (!matches) {
-    return
+    return {}
   }
   return {
     prefix: matches[1],
