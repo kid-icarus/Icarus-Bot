@@ -6,7 +6,9 @@ learn about [RFC 2812](http://tools.ietf.org/html/rfc2812) and [RFC
 1459](http://tools.ietf.org/html/rfc1459.html).
 
 ##Creating a bot:
- - Copy config.dist.json to config.json
+ - `npm install icarusbot`
+ - npm install any plugins you want.
+ - Copy node_modules/icarusbot/config.dist.json to node_modules/icarusbot/config.json TODO: Fix that, updates break config.
  - Fill out all the stuff in config.json
  - Write a bot consumer:
 
