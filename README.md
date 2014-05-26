@@ -12,8 +12,8 @@ learn about [RFC 2812](http://tools.ietf.org/html/rfc2812) and [RFC
 
     ```javascript
     var bot = require('icarusbot')
-    var plugin-foo = require('icarubot-plugin-foo')(bot)`
-    var plugin-bar = require('icarubot-plugin-bar')(bot)`
+    var plugin-foo = require('icarubot-plugin-foo')(bot)
+    var plugin-bar = require('icarubot-plugin-bar')(bot)
     ```
  - Run your bot
    `node whatever-you-name-your-bot.js`
