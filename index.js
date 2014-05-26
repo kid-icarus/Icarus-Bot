@@ -3,7 +3,7 @@ var stream = require('./irc-stream')(config.server)
 var through = require('through2')
 var events = require('events')
 var bot = new events.EventEmitter()
-var coreHandlers = require('./coreHandlers')(bot)
+var coreHandlers = require('./core-handlers')(bot)
 
 var msg = function(targets, message) {
   bot.emit('cmd', {
