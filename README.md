@@ -8,7 +8,8 @@ learn about [RFC 2812](http://tools.ietf.org/html/rfc2812) and [RFC
 ##Creating a bot:
  - Copy config.dist.json to config.json
  - Fill out all the stuff in config.json
- - Write a bot consumer
+ - Write a bot consumer:
+
     ```javascript
     var bot = require('icarusbot')
     var plugin-foo = require('icarubot-plugin-foo')(bot)`
