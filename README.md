@@ -2,8 +2,7 @@
 ![Icarus](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/%27The_Fall_of_Icarus%27%2C_17th_century%2C_Mus%C3%A9e_Antoine_Vivenel.JPG/640px-%27The_Fall_of_Icarus%27%2C_17th_century%2C_Mus%C3%A9e_Antoine_Vivenel.JPG)
 
 This is a very simple IRC bot that I built from scratch because I wanted to
-learn about [RFC 2812](http://tools.ietf.org/html/rfc2812) and [RFC
-1459](http://tools.ietf.org/html/rfc1459.html).
+learn about [RFC 2813](http://tools.ietf.org/html/rfc2813)
 
 ##Creating a bot:
  - `npm install icarusbot`
