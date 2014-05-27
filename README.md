@@ -40,5 +40,9 @@ module.exports = function(bot) {
 ```
 
 #Current plugins (PR to add yours!):
-[icarusbot-lysergix](https://github.com/kid-icarus/icarusbot-lysergix):
- - Adds a handler for a !face message that posts a random face from [lysergix-api](http://smiley.meatcub.es:1337/api/v1/faces)
+ - [icarusbot-lysergix](https://github.com/kid-icarus/icarusbot-lysergix):
+   - Adds a handler for a !face message that posts a random face from [lysergix-api](http://smiley.meatcub.es:1337/api/v1/faces)
+
+ - [icarusbot-reddit](https://github.com/kid-icarus/icarusbot-reddit):
+  - Adds a !r command that accepts a subreddit and optionally an nth latest
+    post and returns the title and link of the post.
