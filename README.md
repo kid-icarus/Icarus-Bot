@@ -46,3 +46,6 @@ module.exports = function(bot) {
  - [icarusbot-reddit](https://github.com/kid-icarus/icarusbot-reddit):
   - Adds a !r command that accepts a subreddit and optionally an nth latest
     post and returns the title and link of the post.
+
+ - [icarusbot-coinflip](https://github.com/void--/icarusbot-coinflip):
+  - Adds a !flip command for when you just can't make up your mind. 
