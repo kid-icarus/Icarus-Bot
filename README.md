@@ -47,5 +47,8 @@ module.exports = function(bot) {
   - Adds a !r command that accepts a subreddit and optionally an nth latest
     post and returns the title and link of the post.
 
+ - [icarusbot-twitter](https://github.com/kid-icarus/icarusbot-twitter):
+  - Adds !tw command with various subcommands to interact with twitter.
+
  - [icarusbot-coinflip](https://github.com/void--/icarusbot-coinflip):
-  - Adds a !flip command for when you just can't make up your mind. 
+  - Adds a !flip command for when you just can't make up your mind.
